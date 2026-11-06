@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontline Orbs: 1939</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">A FRONTLINE ORBS ORIGINAL</p>
+        <h1>Frontline Orbs: 1939</h1>
+        <p class="subtitle">A fast turn-based world conquest game set in an alternate history.</p>
+      </div>
+      <div class="turn-box"><span>TURN</span><strong id="turnNumber">1</strong><small id="dateLabel">September 1939</small></div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="panel left-panel">
+        <h2>Command</h2>
+        <div class="player-card"><div id="playerOrb" class="orb orb-allies">A</div><div><strong id="playerName">Atlantic Union</strong><span id="playerStatus">Your faction</span></div></div>
+        <div class="stat-grid">
+          <div><span>Industry</span><strong id="industryValue">7</strong></div>
+          <div><span>Supplies</span><strong id="supplyValue">12</strong></div>
+          <div><span>Morale</span><strong id="moraleValue">80%</strong></div>
+          <div><span>Territories</span><strong id="territoryValue">3</strong></div>
+        </div>
+        <h3>Selected territory</h3>
+        <div id="selectionInfo" class="selection-info">Select a territory on the map.</div>
+        <div class="actions">
+          <button id="deployButton" class="action-button primary" disabled>Deploy 2 troops</button>
+          <button id="attackButton" class="action-button danger" disabled>Attack neighbor</button>
+          <button id="fortifyButton" class="action-button" disabled>Fortify +3</button>
+          <button id="endTurnButton" class="action-button end">End turn</button>
+        </div>
+        <p class="hint">Tip: select one of your territories, then select an adjacent rival territory to attack.</p>
+      </aside>
+
+      <section class="map-panel">
+        <div class="map-toolbar"><span><i class="live-dot"></i> Campaign map</span><span id="phaseLabel">Planning phase</span><button id="newGameButton" class="small-button">New campaign</button></div>
+        <div id="map" class="map" aria-label="Campaign map"></div>
+        <div class="legend"><span><i class="legend-dot allies"></i> Atlantic Union</span><span><i class="legend-dot axis"></i> Iron Pact</span><span><i class="legend-dot neutral"></i> Neutral</span></div>
+      </section>
+
+      <aside class="panel right-panel">
+        <h2>War room</h2>
+        <div class="objective"><span class="objective-label">OBJECTIVE</span><strong>Control 10 territories</strong><div class="progress"><i id="progressBar"></i></div><small id="objectiveText">3 of 10 controlled</small></div>
+        <h3>Faction report</h3>
+        <div id="factionReport" class="faction-report"></div>
+        <h3>Field reports</h3>
+        <div id="log" class="log" aria-live="polite"></div>
+      </aside>
+    </section>
+    <footer>Original strategy sandbox · No historical outcome is predetermined · <span id="connectionStatus">Command link stable</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
